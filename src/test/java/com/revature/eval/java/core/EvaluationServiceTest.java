@@ -15,6 +15,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.plaf.synth.SynthStyle;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -33,7 +35,7 @@ public class EvaluationServiceTest {
 	public void testAnEmptyString() {
 		assertEquals("", evaluationService.reverse(""));
 	}
-
+	
 	@Test
 	public void testAWord() {
 		assertEquals("tobor", evaluationService.reverse("robot"));
@@ -62,8 +64,9 @@ public class EvaluationServiceTest {
 		final String phrase = "Portable Network Graphics";
 		final String expected = "PNG";
 		assertEquals(expected, evaluationService.acronym(phrase));
+		System.out.println(phrase);
 	}
-
+	
 	@Test
 	public void punctuation() {
 		final String phrase = "First In, First Out";
